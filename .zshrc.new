@@ -47,6 +47,7 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
+
 # User configuration
 
 export PATH="/Users/skilledup/.rbenv/shims:/Users/skilledup/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
@@ -56,6 +57,13 @@ eval "$(rbenv init - --no-rehash zsh)"
 
 source $ZSH/oh-my-zsh.sh
 
+# load custom executable functions
+# for function in ~/.zsh/functions/*; do
+#   source $function
+# done
+
+# aliases
+[[ -f ~/.aliases ]] && source ~/.aliases
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
