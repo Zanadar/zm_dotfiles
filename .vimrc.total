@@ -66,8 +66,10 @@ nmap <F3> :let @/ = ""<CR>
 inoremap jj <ESC>
 
 " Quickly edit/reload the vimrc file
-nmap <silent> <leader>E :e $MYVIMRC<CR>
-noremap <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
+nmap <silent> <leader>V :e $MYVIMRC<CR>
+nmap <silent> <leader>Z :e ~/.zshrc<CR>
+noremap <leader>zz :!source ~/.zshrc<CR>:filetype detect<CR>:exe ":echo 'zshrc reloaded'"<CR>
+noremap <silent> <leader>vv :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
 " make YCM compatible with UltiSnips (using supertab)
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
@@ -143,3 +145,8 @@ set textwidth=80
 set colorcolumn=+1
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%81v.\+/ " Disambiguate ,a & ,t from the Align plugin, making them fast again.
+
+if has("autocmd")
+  " remove trailing whitespace
+  autocmd BufWritePre * :%s/\s\+$//e
+endif

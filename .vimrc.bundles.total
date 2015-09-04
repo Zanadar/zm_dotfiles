@@ -1,6 +1,6 @@
 Plug 'austintaylor/vim-indentobject'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'kchmck/vim-coffee-script'
+Plug 'kchmck/vim-coffee-script', {'for': 'coffeescript'}
 Plug 'kien/ctrlp.vim'
 Plug 'majutsushi/tagbar'
 Plug 'rking/ag.vim'
@@ -22,7 +22,7 @@ Plug 'tpope/vim-rails'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
-Plug 'vim-ruby/vim-ruby'
+Plug 'vim-ruby/vim-ruby', {'for': 'ruby'}
 Plug 'vim-scripts/greplace.vim'
 Plug 'vim-scripts/matchit.zip'
 Plug 'Lokaltog/vim-easymotion'
@@ -30,8 +30,8 @@ Plug 'jgdavey/vim-turbux'
 Plug 'jgdavey/tslime.vim'
 Plug 'nanotech/jellybeans.vim'
 Plug 'Raimondi/delimitMate'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
-Plug 'helino/vim-json'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'helino/vim-json', {'for': 'json'}
 Plug 'junegunn/vim-easy-align'
 Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
 Plug 'SirVer/ultisnips'
@@ -39,3 +39,5 @@ Plug 'ervandew/supertab'
 Plug 'honza/vim-snippets'
 Plug 'mxw/vim-jsx'
 Plug 'justinj/vim-react-snippets'
+Plug 'rust-lang/rust.vim', { 'for': 'rust'}
+Plug 'cespare/vim-toml', { 'for': 'toml'}
