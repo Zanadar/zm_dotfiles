@@ -65,6 +65,12 @@ map <leader>rT <Plug>SendFocusedTestToTmux
 nmap <F3> :let @/ = ""<CR>
 inoremap jj <ESC>
 
+" Cargo testing commands
+map <Leader>rc :wa<CR> :CargoRun<CR>
+map <Leader>ra :wa<CR> :CargoTestAll<CR>
+map <Leader>rb :wa<CR> :CargoUnitTestCurrentFile<CR>
+map <Leader>rf :wa<CR> :CargoUnitTestFocused<CR>
+
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>V :e $MYVIMRC<CR>
 nmap <silent> <leader>Z :e ~/.zshrc<CR>
@@ -81,11 +87,6 @@ let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
-"Tslime Configs
-vmap <C-c><C-c> <Plug>SendSelectionToTmux
-nmap <C-c><C-c> <Plug>NormalModeSendToTmux
-nmap <C-c>r <Plug>SetTmuxVars
-
 " in case you forgot to sudo
 cnoremap w!! %!sudo tee > /dev/null %
 
@@ -94,7 +95,7 @@ let g:ctrlp_match_window = 'order:ttb,max:20'
 let g:NERDSpaceDelims=1
 
 "Turbux config
-let g:turbux_runner  = 'tslime'
+let g:turbux_runner  = 'vimux'
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
 if executable('ag')
   " Use Ag over Grep
