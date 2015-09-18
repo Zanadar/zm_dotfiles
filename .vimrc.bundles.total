@@ -1,6 +1,6 @@
 Plug 'austintaylor/vim-indentobject'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'kchmck/vim-coffee-script', {'for': 'coffeescript'}
+Plug 'kchmck/vim-coffee-script'
 Plug 'kien/ctrlp.vim'
 Plug 'majutsushi/tagbar'
 Plug 'rking/ag.vim'
@@ -39,6 +39,4 @@ Plug 'ervandew/supertab'
 Plug 'honza/vim-snippets'
 Plug 'mxw/vim-jsx'
 Plug 'justinj/vim-react-snippets'
-Plug 'jtdowney/vimux-cargo'
-Plug 'rust-lang/rust.vim', { 'for': 'rust'}
-Plug 'cespare/vim-toml', { 'for': 'toml'}
+Plug 'tpope/vim-fireplace'
