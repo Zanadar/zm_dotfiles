@@ -28,10 +28,8 @@ Plug 'vim-scripts/matchit.zip'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'jgdavey/vim-turbux'
 Plug 'benmills/vimux'
-Plug 'nanotech/jellybeans.vim'
-Plug 'Raimondi/delimitMate'
+Plug 'junegunn/seoul256.vim'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
-Plug 'helino/vim-json', {'for': 'json'}
 Plug 'junegunn/vim-easy-align'
 Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
 Plug 'SirVer/ultisnips'
@@ -40,3 +38,5 @@ Plug 'honza/vim-snippets'
 Plug 'mxw/vim-jsx'
 Plug 'justinj/vim-react-snippets'
 Plug 'tpope/vim-fireplace'
+Plug 'vim-scripts/paredit.vim', { 'for': ['clojure', 'ruby', 'javascript', 'coffeescript', 'coffee']}
+Plug 'helino/vim-json', {'for': 'json'}

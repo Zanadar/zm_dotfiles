@@ -37,6 +37,7 @@ set tabstop=8                                                " actual tabs occup
 set wildignore=log/**,node_modules/**,target/**,tmp/**,*.rbc
 set wildmenu                                                 " show a navigable menu for tab completion
 set wildmode=longest,list,full
+set nospell
 
 " Enable basic mouse behavior such as resizing buffers.
 set mouse=a
@@ -65,11 +66,11 @@ map <leader>rT <Plug>SendFocusedTestToTmux
 nmap <F3> :let @/ = ""<CR>
 inoremap jj <ESC>
 
-" Cargo testing commands
-map <Leader>rc :wa<CR> :CargoRun<CR>
-map <Leader>ra :wa<CR> :CargoTestAll<CR>
-map <Leader>rb :wa<CR> :CargoUnitTestCurrentFile<CR>
-map <Leader>rf :wa<CR> :CargoUnitTestFocused<CR>
+" Clojure
+nnoremap <leader>ee :Eval<CR>
+nnoremap <leader>EE :100%Eval<CR>
+nnoremap <leader>RR :Require!<CR>
+
 
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>V :e $MYVIMRC<CR>
@@ -132,10 +133,14 @@ endif
 " Don't copy the contents of an overwritten selection.
 vnoremap p "_dP
 
+
+colo seoul256
+let g:seoul256_background = 234
+
 " gui settings
 if (&t_Co == 256 || has('gui_running'))
   if ($TERM_PROGRAM == 'iTerm.app')
-    colorscheme Jellybeans
+    colorscheme seoul256
   else
     colorscheme desert
   endif
