@@ -53,8 +53,7 @@ plugins=(git)
 export PATH="/Users/skilledup/.rbenv/shims:/Users/skilledup/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export PATH="$HOME/.bin:$PATH"
 eval "$(rbenv init - --no-rehash zsh)"
-# export MANPATH="/usr/local/man:$MANPATH"
-
+export PATH="$HOME/.node/bin:$PATH"
 source $ZSH/oh-my-zsh.sh
 
 # load custom executable functions
