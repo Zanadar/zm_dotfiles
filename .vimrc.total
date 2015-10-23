@@ -66,12 +66,6 @@ map <leader>rT <Plug>SendFocusedTestToTmux
 nmap <F3> :let @/ = ""<CR>
 inoremap jj <ESC>
 
-" Clojure
-nnoremap <leader>ee :Eval<CR>
-nnoremap <leader>EE :100%Eval<CR>
-nnoremap <leader>RR :Require!<CR>
-
-
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>V :e $MYVIMRC<CR>
 nmap <silent> <leader>Z :e ~/.zshrc<CR>
@@ -133,14 +127,11 @@ endif
 " Don't copy the contents of an overwritten selection.
 vnoremap p "_dP
 
-
-colo seoul256
-let g:seoul256_background = 234
-
 " gui settings
+set background=dark
 if (&t_Co == 256 || has('gui_running'))
   if ($TERM_PROGRAM == 'iTerm.app')
-    colorscheme seoul256
+    colorscheme hybrid
   else
     colorscheme desert
   endif
