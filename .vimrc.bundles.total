@@ -1,10 +1,5 @@
-Plug 'Keithbsmiley/tmux.vim'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'jgdavey/vim-turbux'
-Plug 'benmills/vimux'
-
 Plug 'kien/ctrlp.vim'
-Plug 'PeterRincker/vim-argumentative'
+Plug 'bling/vim-airline'
 Plug 'rking/ag.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
@@ -19,14 +14,17 @@ Plug 'tpope/vim-rails'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-ragtag'
+Plug 'tpope/vim-markdown'
+Plug 'tpope/vim-fireplace'
 Plug 'Lokaltog/vim-easymotion'
-Plug 'junegunn/vim-easy-align'
-Plug 'w0ng/vim-hybrid'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'ervandew/supertab'
-Plug 'Raimondi/delimitMate'
+Plug 'Raimondi/delimitMate', { 'for': ['ruby', 'javascript', 'coffeescript', 'coffee']}
+Plug 'vim-scripts/paredit.vim', { 'for': ['clojure']}
 Plug 'SirVer/ultisnips'
 
+Plug 'altercation/vim-colors-solarized'
 Plug 'helino/vim-json'
 Plug 'kchmck/vim-coffee-script'
 Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }

@@ -89,3 +89,4 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 fasd_cache="$HOME/.fasd-init-bash"#fasd
 eval "$(fasd --init auto)"
+export PATH="/usr/local/sbin:$PATH"
