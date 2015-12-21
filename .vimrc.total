@@ -57,6 +57,10 @@ nnoremap <leader>T :CtrlPClearCache<CR>:CtrlP<CR>
 nnoremap <leader>] :TagbarToggle<CR>
 nmap <F3> :let @/ = ""<CR>
 inoremap jj <ESC>
+noremap <C-h> <C-w>h
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-l> <C-w>l
 
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>V :e $MYVIMRC<CR>
@@ -131,7 +135,7 @@ colorscheme solarized
 set textwidth=110
 set colorcolumn=+1
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%81v.\+/ " Disambiguate ,a & ,t from the Align plugin, making them fast again.
+match OverLength /\%110v.\+/ " Disambiguate ,a & ,t from the Align plugin, making them fast again.
 
 if has("autocmd")
   " remove trailing whitespace
