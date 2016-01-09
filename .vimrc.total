@@ -79,6 +79,8 @@ let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
+let g:syntastic_javascript_checkers = ['standard']
+
 " in case you forgot to sudo
 cnoremap w!! %!sudo tee > /dev/null %
 
@@ -108,25 +110,6 @@ autocmd User Rails silent! Rnavcommand mediator       app/mediators             
 autocmd User Rails silent! Rnavcommand stepdefinition features/step_definitions -glob=**/* -suffix=_steps.rb
 " automatically rebalance windows on vim resize
 autocmd VimResized * :wincmd =
-
-function! ToggleSideEffects()
-    if mapcheck("dd", "n") == ""
-        noremap dd "_dd
-        noremap D "_D
-        noremap d "_d
-        noremap X "_X
-        noremap x "_x
-        echo 'side effects on'
-    else
-        unmap dd
-        unmap D
-        unmap d
-        unmap X
-        unmap x
-        echo 'side effects on'
-    endif
-endfunction
-nnoremap ,, :call ToggleSideEffects()<CR>
 
 set background=dark
 colorscheme solarized

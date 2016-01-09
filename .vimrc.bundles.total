@@ -23,11 +23,8 @@ Plug 'ervandew/supertab'
 Plug 'Raimondi/delimitMate', { 'for': ['ruby', 'javascript', 'coffeescript', 'coffee']}
 Plug 'vim-scripts/paredit.vim', { 'for': ['clojure']}
 Plug 'SirVer/ultisnips'
-
 Plug 'altercation/vim-colors-solarized'
 Plug 'helino/vim-json'
 Plug 'kchmck/vim-coffee-script'
-Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
-Plug 'walm/jshint.vim'
 Plug 'jelera/vim-javascript-syntax'
 Plug 'othree/javascript-libraries-syntax.vim'
