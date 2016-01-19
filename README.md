@@ -1,7 +1,6 @@
 # zm_dotfiles
 My Current Dotfiles Setup
 
-Note:
- to get vim to play with rvm run `sudo mv /etc/zshenv /etc/zshrc`
+First you have to install homebrew and oh-my-zsh
  
-- Also in install the thoughtbot dotfile / run their laptop script
+`ln -sf repositories/config-files/.vimrc ~/.vimrc` etc.
