@@ -12,6 +12,5 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 - use `nvm` & `rbenv` to install preferred versions
-- `ln -sf repositories/config-files/.vimrc ~/.vimrc` etc.
-- 
+- links: `ln -sf repositories/config-files/.vimrc ~/.vimrc` etc.
 
