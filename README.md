@@ -13,4 +13,5 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 ```
 - use `nvm` & `rbenv` to install preferred versions
 - links: `ln -sf repositories/config-files/.vimrc ~/.vimrc` etc.
+- To make tmux copy work `brew install reattach-to-user-namespace` and [do this](https://evertpot.com/osx-tmux-vim-copy-paste-clipboard/)
 
