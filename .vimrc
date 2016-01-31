@@ -80,8 +80,6 @@ let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 let g:syntastic_javascript_checkers = ['standard']
-"autocmd bufwritepost *.js silent !standard % --format
-"set autoread
 
 " in case you forgot to sudo
 cnoremap w!! %!sudo tee > /dev/null %

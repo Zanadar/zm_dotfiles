@@ -17,3 +17,5 @@ alias path='echo $PATH | tr -s ":" "\n"'
 
 alias startpg='pg_ctl start -D /usr/local/var/postgres'
 alias stoppg='pg_ctl -D /usr/local/var/postgres'
+
+alias git=hub
