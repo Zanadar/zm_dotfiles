@@ -19,3 +19,4 @@ alias startpg='pg_ctl start -D /usr/local/var/postgres'
 alias stoppg='pg_ctl -D /usr/local/var/postgres'
 
 alias git=hub
+alias npmo="npm --cache-min 9999999 "
