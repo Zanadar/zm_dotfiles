@@ -133,4 +133,3 @@ endif
 au Filetype html setlocal sw=2 ts=2 sts=2
 au Filetype less setlocal sw=2 ts=2 sts=2
 au Filetype clojure setlocal sw=4 ts=4 sts=4
-autocmd FileType javascript setlocal commentstring=#\ %s
