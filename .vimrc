@@ -125,14 +125,6 @@ if has("autocmd")
   autocmd BufWritePre * :%s/\s\+$//e
 endif
 
-" vim-airline
-let g:airline_powerline_fonts = 1
-function! AirlineInit()
-    let g:airline_section_b = airline#section#create(['branch'])
-    let g:airline_section_c = '%<%t%m'
-    let g:airline_section_warning = airline#section#create(['syntastic'])
-endfunction
-autocmd VimEnter * if exists(':AirlineToggle') | call AirlineInit()
 
 """"""""""""""""""""""""""""""""""""""""""""
 " Language Settings
@@ -141,25 +133,4 @@ autocmd VimEnter * if exists(':AirlineToggle') | call AirlineInit()
 au Filetype html setlocal sw=2 ts=2 sts=2
 au Filetype less setlocal sw=2 ts=2 sts=2
 au Filetype clojure setlocal sw=4 ts=4 sts=4
-
-" Clojure
-au Filetype clojure nmap <c-c><c-k> :Require<cr>
-au Filetype clojure let g:clojure_fuzzy_indent = 1
-au Filetype clojure let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let']
-au BufNewFile,BufRead *.edn set filetype=clojure
-au Filetype clojure autocmd BufWritePre * :%s/\s\+$//e
-function! TestToplevel() abort
-    "Eval the toplevel clojure form (a deftest) and then test-var the
-    "result."
-    normal! ^
-    let line1 = searchpair('(','',')', 'bcrn', g:fireplace#skip)
-    let line2 = searchpair('(','',')', 'rn', g:fireplace#skip)
-    let expr = join(getline(line1, line2), "\n")
-    let var = fireplace#session_eval(expr)
-    let result = fireplace#echo_session_eval("(clojure.test/test-var " . var . ")")
-    return result
-endfunction
-au Filetype clojure nmap <c-c><c-t> :call TestToplevel()<cr>
-nnoremap <leader>ee :Eval<CR>
-nnoremap <leader>EE :100%Eval<CR>
-nnoremap <leader>RR :Require!<CR>
+autocmd FileType javascript setlocal commentstring=#\ %s
