@@ -19,7 +19,7 @@
 	helper = osxkeychain
 [user]
   name = Zander Mackie
-  email = zander@skilledup.com
+	email = zmackie@gmail.com
 [code]
   editor = /usr/local/bin/vim
 [core]
