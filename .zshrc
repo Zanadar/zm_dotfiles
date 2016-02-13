@@ -10,7 +10,7 @@ export PATH="$HOME/.bin:$PATH"
 eval "$(rbenv init - --no-rehash zsh)"
 export PATH="$HOME/.node/bin:$PATH"
 
-[[ -f ~/.aliases ]] && source ~/.aliases
+source ~/.aliases
 
 source /usr/local/opt/nvm/nvm.sh
 
