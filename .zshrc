@@ -11,7 +11,6 @@ eval "$(rbenv init - --no-rehash zsh)"
 export PATH="$HOME/.node/bin:$PATH"
 
 source ~/.aliases
-
 source /usr/local/opt/nvm/nvm.sh
 
 #fasd
@@ -25,4 +24,8 @@ export PATH=$PATH:/usr/local/opt/go/libexec/bin
 export GOPATH=$HOME/work
 export PATH=$PATH:$GOPATH/bin
 
+eval "$(rbenv init -)"
+
 source $ZSH/oh-my-zsh.sh
+
+test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
