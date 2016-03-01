@@ -50,7 +50,7 @@ let mapleader = ','
 nnoremap ; :
 noremap bp binding.pry
 nnoremap <leader>a :Ag<space>
-nnoremap <leader>b :CtrlPBuffer<CR>
+nnoremap <leader>bb :CtrlPBuffer<CR>
 nnoremap <leader>d :NERDTreeToggle<CR>
 nnoremap <leader>f :NERDTreeFind<CR>
 nnoremap <leader>T :CtrlPClearCache<CR>:CtrlP<CR>
