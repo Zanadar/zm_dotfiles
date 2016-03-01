@@ -24,3 +24,4 @@
   editor = /usr/local/bin/vim
 [core]
 	editor = /usr/local/bin/vim
+	excludesfile = /Users/zanadar/.global_ignore
