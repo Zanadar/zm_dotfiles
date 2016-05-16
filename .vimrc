@@ -136,6 +136,8 @@ au Filetype clojure setlocal sw=4 ts=4 sts=4
  inoremap <expr><C-g>     neocomplete#undo_completion()
  inoremap <expr><C-l>     neocomplete#complete_common_string()
 
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+
  " Recommended key-mappings.
  " <CR>: close popup and save indent.
  inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
