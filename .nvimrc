@@ -2,9 +2,9 @@
 syntax enable
 
 " Call Vim Plug
-call plug#begin('~/config/nvim/plugged')
-if filereadable(expand("~/.vimrc.bundles"))
-  source ~/.vimrc.bundles
+call plug#begin()
+if filereadable(expand("~/.config/nvim/bundles.vim"))
+  source ~/.config/nvim/bundles.vim
 endif
 call plug#end()
 
@@ -60,10 +60,10 @@ noremap <C-l> <C-w>l
 
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>V :e $MYVIMRC<CR>
-nmap <silent> <leader>B :e ~/.vimrc.bundles<CR>
-nmap <silent> <leader>Z :e ~/.zshrc<CR>
+nmap <silent> <leader>B :e ~/.config/nvim/bundles.vim<CR>
+nmap <silent> <leader>Z :e ~/.config/nvim/init.vim<CR>
 noremap <leader>zz :!source ~/.zshrc<CR>:filetype detect<CR>:exe ":echo 'zshrc reloaded'"<CR>
-noremap <leader>vv :source ~/.vim/init.vim<CR>:filetype detect<CR>:exe ":echo 'nvimrc reloaded'"<CR>
+noremap <leader>vv :source ~/.config/nvim/init.vim<CR>:filetype detect<CR>:exe ":echo 'nvimrc reloaded'"<CR>
 
 " in case you forgot to sudo
 cnoremap w!! %!sudo tee > /dev/null %

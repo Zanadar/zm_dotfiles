@@ -1,7 +1,7 @@
 # zm_dotfiles
 My Current Dotfiles Setup
 
-First you have to install homebrew, spectacles, iterm
+First you have to install homebrew, spectacle, iterm
 Also install `hack` font and solarized color scheme for iterm.
 
 ##### Manual install
