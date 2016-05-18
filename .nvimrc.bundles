@@ -1,7 +1,7 @@
 Plug 'kien/ctrlp.vim'
 Plug 'rking/ag.vim'
 Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/syntastic'
+Plug 'neomake/neomake'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
@@ -14,14 +14,15 @@ Plug 'tpope/vim-markdown'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'Raimondi/delimitMate'
 Plug 'altercation/vim-colors-solarized'
-Plug 'Shougo/neocomplete.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'sevko/vim-nand2tetris-syntax'
 Plug 'majutsushi/tagbar'
-Plug 'fatih/vim-go', {'tag': 'v1.4'}
-Plug 'eagletmt/neco-ghc'
 Plug 'Shougo/vimproc.vim', { 'do': 'make'}
-Plug 'eagletmt/ghcmod-vim'
 Plug 'elixir-lang/vim-elixir'
 Plug 'mxw/vim-jsx'
 Plug 'vim-javascript'
+Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
+function! DoRemote(arg)
+  UpdateRemotePlugins
+endfunction
+Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
