@@ -11,21 +11,20 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-ragtag'
 Plug 'tpope/vim-markdown'
+Plug 'tpope/vim-commentary'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'Raimondi/delimitMate'
 Plug 'altercation/vim-colors-solarized'
 Plug 'sevko/vim-nand2tetris-syntax'
 Plug 'majutsushi/tagbar'
-Plug 'edsono/vim-matchit'
+Plug 'Shougo/vimproc.vim', { 'do': 'make'}
 Plug 'elixir-lang/vim-elixir'
 Plug 'mxw/vim-jsx'
 Plug 'vim-javascript'
-Plug 'slashmili/alchemist.vim'
-Plug 'tpope/vim-jdaddy'
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
-Plug 'tpope/vim-commentary'
-Plug 'itchyny/lightline.vim'
 function! DoRemote(arg)
   UpdateRemotePlugins
 endfunction
 Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
+Plug 'fatih/vim-go'
+Plug 'nathanaelkane/vim-indent-guides'

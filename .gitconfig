@@ -23,7 +23,5 @@
 [code]
   editor = /usr/local/bin/vim
 [core]
-	editor = nvim
+	editor = /usr/local/bin/vim
 	excludesfile = /Users/zanadar/.global_ignore
-[hub]
-	protocol = https

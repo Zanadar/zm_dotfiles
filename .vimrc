@@ -2,9 +2,9 @@
 syntax enable
 
 " Call Vim Plug
-call plug#begin()
-if filereadable(expand("~/.config/nvim/bundles.vim"))
-  source ~/.config/nvim/bundles.vim
+call plug#begin('~/config/nvim/plugged')
+if filereadable(expand("~/.vimrc.bundles"))
+  source ~/.vimrc.bundles
 endif
 call plug#end()
 
@@ -53,27 +53,17 @@ nnoremap <leader>T :CtrlPClearCache<CR>:CtrlP<CR>
 nnoremap <leader>] :TagbarToggle<CR>
 nmap <F3> :let @/ = ""<CR>
 inoremap jj <ESC>
-if has('nvim')
-    " Temporary fix for neovim/neovim#2048
-    " Shoutout to @vilhalmer for the idea for this fix
-    " https://github.com/vilhalmer/System/commit/a40ff262918a83e88fb643bad31dde3c45211bba
-    "
-    " Fix for window movement
-    nmap <bs> <C-w>h
-    " Fix for tab movement
-    nmap <C-w><bs> :tabprevious<CR>
-endif
-nn <C-h> <C-w>h
-nn <C-j> <C-w>j
-nn <C-k> <C-w>k
-nn <C-l> <C-w>l
+noremap <C-h> <C-w>h
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-l> <C-w>l
 
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>V :e $MYVIMRC<CR>
-nmap <silent> <leader>B :e ~/.config/nvim/bundles.vim<CR>
+nmap <silent> <leader>B :e ~/.vimrc.bundles<CR>
 nmap <silent> <leader>Z :e ~/.zshrc<CR>
 noremap <leader>zz :!source ~/.zshrc<CR>:filetype detect<CR>:exe ":echo 'zshrc reloaded'"<CR>
-noremap <leader>vv :source ~/.config/nvim/init.vim<CR>:filetype detect<CR>:exe ":echo 'nvimrc reloaded'"<CR>
+noremap <leader>vv :source ~/.vim/init.vim<CR>:filetype detect<CR>:exe ":echo 'nvimrc reloaded'"<CR>
 
 " in case you forgot to sudo
 cnoremap w!! %!sudo tee > /dev/null %
@@ -93,6 +83,11 @@ if executable('ag')
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
 
+"Comment strings
+autocmd FileType ruby setlocal commentstring=#\ %s
+autocmd FileType elixir setlocal commentstring=#\ %s
+
+
 " fdoc is yaml
 autocmd BufRead,BufNewFile *.fdoc set filetype=yaml
 " md is markdown
@@ -110,9 +105,6 @@ autocmd VimResized * :wincmd =
 
 set background=dark
 colorscheme solarized
-let g:lightline = {
-      \ 'colorscheme': 'solarized',
-      \ }
 
  " Make it obvious where 110 characters is
 set textwidth=110
@@ -125,7 +117,6 @@ if has("autocmd")
   autocmd BufWritePre * :%s/\s\+$//e
 endif
 
-let g:deoplete#enable_at_startup = 1
 if !exists('g:deoplete#omni#input_patterns')
   let g:deoplete#omni#input_patterns = {}
 endif
@@ -137,8 +128,6 @@ inoremap <silent><expr> <Tab> pumvisible() ? "\<C-n>" : deoplete#mappings#manual
 inoremap <Leader><Tab> <Space><Space>
 " tern
 autocmd FileType javascript nnoremap <silent> <buffer> gb :TernDef<CR>
-
-nnoremap <leader>% :MtaJumpToOtherTag<cr>
 
 " omnifuncs
 augroup omnifuncs
@@ -159,8 +148,7 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""
 " Language Settings
 """"""""""""""""""""""""""""""""""""""""""""""
-autocmd FileType elixir setlocal commentstring=#\ %s
+
 au Filetype html setlocal sw=2 ts=2 sts=2
 au Filetype less setlocal sw=2 ts=2 sts=2
 au Filetype clojure setlocal sw=4 ts=4 sts=4
-let g:jsx_ext_required = 0
