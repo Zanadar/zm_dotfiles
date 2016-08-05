@@ -22,6 +22,8 @@ Plug 'elixir-lang/vim-elixir'
 Plug 'mxw/vim-jsx'
 Plug 'vim-javascript'
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
+Plug 'othree/javascript-libraries-syntax.vim'
+Plug 'claco/jasmine.vim'
 function! DoRemote(arg)
   UpdateRemotePlugins
 endfunction
