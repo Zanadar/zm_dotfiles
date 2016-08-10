@@ -20,6 +20,8 @@ Plug 'edsono/vim-matchit'
 Plug 'elixir-lang/vim-elixir'
 Plug 'mxw/vim-jsx'
 Plug 'vim-javascript'
+Plug 'othree/yajs.vim'
+Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'slashmili/alchemist.vim'
 Plug 'tpope/vim-jdaddy'
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
