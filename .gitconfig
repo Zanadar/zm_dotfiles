@@ -21,7 +21,7 @@
   name = Zander Mackie
 	email = zmackie@gmail.com
 [code]
-  editor = /usr/local/bin/vim
+  editor = /usr/local/bin/nvim
 [core]
-	editor = /usr/local/bin/vim
+	editor = /usr/local/bin/nvim
 	excludesfile = /Users/zanadar/.global_ignore
