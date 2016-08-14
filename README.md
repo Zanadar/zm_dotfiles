@@ -4,6 +4,10 @@ My Current Dotfiles Setup
 First you have to install homebrew, spectacle, iterm
 Also install `hack` font and solarized color scheme for iterm.
 
+##### Automagic:
+Run
+`$ ./.setup`
+
 ##### Manual install
 - `Brew install {fasd, nvim, python3, the_silver_searcher, rbenv, hub, tig, redis, postgresql, etc.}`
 - `pip3 install --user neovim`
