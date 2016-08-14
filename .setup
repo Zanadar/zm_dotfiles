@@ -1,0 +1,72 @@
+#!/bin/bash
+
+# Laptop setup file
+
+fancy_echo() {
+  local fmt="$1"; shift
+
+  # shellcheck disable=SC2059
+  printf "\n$fmt\n" "$@"
+}
+
+if ! command -v brew >/dev/null; then
+  fancy_echo "Installing Homebrew ..."
+    curl -fsS \
+      'https://raw.githubusercontent.com/Homebrew/install/master/install' | ruby
+
+    export PATH="/usr/local/bin:$PATH"
+fi
+
+fancy_echo "Updating Homebrew formulae ..."
+brew update
+brew bundle --file=- <<EOF
+tap "homebrew/services"
+# Unix
+brew "ctags"
+brew "git"
+brew "fasd"
+brew "openssl"
+brew "the_silver_searcher"
+brew "zsh"
+# Heroku
+brew "heroku-toolbelt"
+# GitHub
+brew "hub"
+# Image manipulation
+brew "imagemagick"
+# Programming languages
+brew "python3"
+brew "libyaml" # should come after openssl
+brew "node"
+brew "rbenv"
+brew "ruby-build"
+brew "elixir"
+# Databases
+brew "postgres", restart_service: true
+brew "redis", restart_service: true
+EOF
+
+brew install "neovim/neovim/neovim"
+
+# oh-my-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+#nvm-zsh plugin
+git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nvm
+
+#vim plugged
+curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+pip3 install --user neovim
+
+ln -sf ~/src/zm_dotfiles/.nvimrc ~/.config/nvim/init.vim
+ln -sf ~/src/zm_dotfiles/.nvimrc.bundles ~/.config/nvim/bundles.vim
+ln -sf ~/src/zm_dotfiles/.aliases ~/.aliases
+ln -sf ~/src/zm_dotfiles/.gitconfig ~/.gitconfig
+ln -sf ~/src/zm_dotfiles/.gitignore ~/.gitignore
+ln -sf ~/src/zm_dotfiles/.zshrc ~/.zshrc
+ln -sf ~/src/zm_dotfiles/.nvmrc ~/.nvmrc
+ln -sf ~/src/zm_dotfiles/.exercism.json ~/.exercism.json
+
+# You still have to change your shell to zsh
+# Also dont forget to run `:PlugInstall and :UpdateRemotePlugins` the first time your open nvim
