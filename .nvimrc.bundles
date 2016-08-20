@@ -14,19 +14,22 @@ Plug 'tpope/vim-markdown'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'Raimondi/delimitMate'
 Plug 'altercation/vim-colors-solarized'
+Plug 'w0ng/vim-hybrid'
 Plug 'sevko/vim-nand2tetris-syntax'
 Plug 'majutsushi/tagbar'
 Plug 'edsono/vim-matchit'
 Plug 'elixir-lang/vim-elixir'
-Plug 'mxw/vim-jsx'
-Plug 'vim-javascript'
-Plug 'othree/yajs.vim'
-Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'slashmili/alchemist.vim'
+
+Plug 'mxw/vim-jsx'
+Plug 'pangloss/vim-javascript', { 'branch': 'develop' }
+Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'tpope/vim-jdaddy'
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
+
 Plug 'tpope/vim-commentary'
 Plug 'itchyny/lightline.vim'
+
 function! DoRemote(arg)
   UpdateRemotePlugins
 endfunction
