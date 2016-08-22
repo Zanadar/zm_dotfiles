@@ -22,7 +22,7 @@ Plug 'elixir-lang/vim-elixir'
 Plug 'slashmili/alchemist.vim'
 
 Plug 'mxw/vim-jsx'
-Plug 'pangloss/vim-javascript', { 'branch': 'develop' }
+Plug 'pangloss/vim-javascript'
 Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'tpope/vim-jdaddy'
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
