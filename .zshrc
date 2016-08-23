@@ -6,12 +6,6 @@ plugins=(git, zsh-nvm)
 export PATH="~/.rbenv/shims:~/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export PATH="$HOME/.bin:$PATH"
 eval "$(rbenv init - --no-rehash zsh)"
-#e xport PATH="$HOME/.node/bin:$PATH"
-
-# Proxies
-#export http_proxy="http://proxyanbcge.nbc.com:80/"
-#export https_proxy="http://proxyanbcge.nbc.com:80/"
-#export no_proxy="auth.login.devcloudwest.inbcu.com, api.cloudeast.inbcu.com, login.cloudeast.inbcu.com, loggregator.cloudeast.inbcu.com, localhost, 127.0.0.1"
 
 source ~/.aliases
 export NVM_DIR="$HOME/.nvm"
@@ -34,6 +28,8 @@ function noproxy() {
 #fasd
 fasd_cache="$HOME/.fasd-init-bash"
 eval "$(fasd --init auto)"
+
+export PSQL_EDITOR=$(which nvim)
 
 export PATH="/usr/local/sbin:$PATH"
 eval alias git=hub
