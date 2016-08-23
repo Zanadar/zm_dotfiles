@@ -154,6 +154,8 @@ if exists('g:plugs["tern_for_vim"]')
   let g:tern_show_signature_in_pum = 1
   autocmd FileType javascript setlocal omnifunc=tern#Complete
 endif
+nnoremap <Space> za
+set foldlevelstart=20
 
 """"""""""""""""""""""""""""""""""""""""""""
 " Language Settings
@@ -161,6 +163,7 @@ endif
 let g:used_javascript_libs = 'underscore,angular,jasmine'
 autocmd FileType elixir setlocal commentstring=#\ %s
 autocmd FileType javascript setlocal commentstring=//\ %s
+autocmd FileType javascript setlocal foldmethod=syntax
 au Filetype html setlocal sw=2 ts=2 sts=2
 au Filetype less setlocal sw=2 ts=2 sts=2
 au Filetype clojure setlocal sw=4 ts=4 sts=4
