@@ -1,0 +1,6 @@
+set background=dark
+colorscheme solarized
+au BufRead,BufNewFile *.overrides setfiletype sass
+inoremap jj <esc>
+noremap ; :
+inoremap <esc> <nop>
