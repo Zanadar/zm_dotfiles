@@ -39,6 +39,7 @@ PATH=/usr/local/sbin:~/.rbenv/shims:~/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbi
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
 export GOPATH=$HOME/src/golang
 export PATH=$PATH:$GOPATH/bin
+[ -f ~/.zshrc_local ] && . ~/.zshrc_local
 
 eval "$(rbenv init -)"
 
