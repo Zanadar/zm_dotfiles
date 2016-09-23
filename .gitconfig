@@ -2,6 +2,9 @@
   default = current
 [color]
   ui = auto
+[credential]
+  helper = osxkeychain
+  useHttpPath = true
 [alias]
   aa = add --all
   ap = add --patch
@@ -16,7 +19,6 @@
 [rebase]
   autosquash = true
 [credential]
-	helper = osxkeychain
 [user]
   name = Zander Mackie
 	email = zmackie@gmail.com
