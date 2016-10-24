@@ -20,6 +20,7 @@ Plug 'majutsushi/tagbar'
 Plug 'edsono/vim-matchit'
 Plug 'elixir-lang/vim-elixir'
 Plug 'slashmili/alchemist.vim'
+Plug 'powerman/vim-plugin-AnsiEsc'
 
 Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'

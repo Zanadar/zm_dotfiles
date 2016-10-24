@@ -44,7 +44,6 @@ let html_no_rendering=1 " Don't render italic, bold, links in HTML
 " keyboard shortcuts
 let mapleader = ','
 nnoremap ; :
-noremap bp binding.pry
 nnoremap <leader>a :Ag<space>
 nnoremap <leader>bb :CtrlPBuffer<CR>
 nnoremap <leader>d :NERDTreeToggle<CR>
