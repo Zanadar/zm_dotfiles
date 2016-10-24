@@ -34,10 +34,9 @@ export PSQL_EDITOR=$(which nvim)
 export PATH="/usr/local/sbin:$PATH"
 eval alias git=hub
 eval "$(hub alias -s)"
-export
-PATH=/usr/local/sbin:~/.rbenv/shims:~/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:~/Documents/nand2tetris/tools:~/.local/bin
-export PATH=$PATH:/usr/local/opt/go/libexec/bin
-export GOPATH=$HOME/src/golang
+export PATH=/usr/local/sbin:~/.rbenv/shims:~/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:~/Documents/nand2tetris/tools:~/.local/bin
+export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$HOME/code/go
 export PATH=$PATH:$GOPATH/bin
 [ -f ~/.zshrc_local ] && . ~/.zshrc_local
 
