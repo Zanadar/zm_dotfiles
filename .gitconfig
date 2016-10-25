@@ -14,6 +14,7 @@
   st = status
   lod = log --oneline --decorate
   rim = rebase -i master
+  pushf = push --force-with-lease
 [merge]
   ff = only
 [fetch]
