@@ -3,4 +3,7 @@ colorscheme solarized
 au BufRead,BufNewFile *.overrides setfiletype sass
 inoremap jj <esc>
 noremap ; :
-inoremap <esc> <nop>
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
