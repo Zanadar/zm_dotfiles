@@ -6,8 +6,6 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-rails'
-Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-ragtag'
 Plug 'tpope/vim-markdown'
@@ -15,19 +13,19 @@ Plug 'Lokaltog/vim-easymotion'
 Plug 'Raimondi/delimitMate'
 Plug 'altercation/vim-colors-solarized'
 Plug 'w0ng/vim-hybrid'
-Plug 'sevko/vim-nand2tetris-syntax'
 Plug 'majutsushi/tagbar'
 Plug 'edsono/vim-matchit'
 Plug 'elixir-lang/vim-elixir'
 Plug 'slashmili/alchemist.vim'
 Plug 'powerman/vim-plugin-AnsiEsc'
-
-Plug 'mxw/vim-jsx'
+Plug 'fatih/vim-go'
+Plug 'Shougo/neosnippet.vim'
+Plug 'Shougo/neosnippet-snippets'
+Plug 'airblade/vim-gitgutter'
 Plug 'pangloss/vim-javascript'
 Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'tpope/vim-jdaddy'
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
-
 Plug 'tpope/vim-commentary'
 Plug 'itchyny/lightline.vim'
 
@@ -35,3 +33,5 @@ function! DoRemote(arg)
   UpdateRemotePlugins
 endfunction
 Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
+Plug 'zchee/deoplete-go', { 'do': 'make'}
+Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
