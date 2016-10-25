@@ -12,20 +12,21 @@
   ci = commit -v
   co = checkout
   st = status
+  lod = log --oneline --decorate
+  rim = rebase -i master
 [merge]
   ff = only
 [fetch]
   prune = true
 [rebase]
   autosquash = true
-[credential]
 [user]
   name = Zander Mackie
-	email = zmackie@gmail.com
+  email = zmackie@gmail.com
 [code]
   editor = /usr/local/bin/nvim
 [core]
-	editor = /usr/local/bin/nvim
-	excludesfile = /Users/zanadar/.global_ignore
+  editor = /usr/local/bin/nvim
+  excludesfile = /Users/zanadar/.global_ignore
 [hub]
-	protocol = https
+  protocol = https
