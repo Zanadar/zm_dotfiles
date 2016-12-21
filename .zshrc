@@ -12,6 +12,10 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
 
+terminate(){
+ lsof -P | grep ':3000' | awk '{print $2}' | xargs kill -9
+}
+
 #fasd
 fasd_cache="$HOME/.fasd-init-bash"
 eval "$(fasd --init auto)"
