@@ -29,6 +29,7 @@ Plug 'tpope/vim-jdaddy'
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 Plug 'tpope/vim-commentary'
 Plug 'itchyny/lightline.vim'
+Plug 'christoomey/vim-tmux-navigator'
 
 function! DoRemote(arg)
   UpdateRemotePlugins
