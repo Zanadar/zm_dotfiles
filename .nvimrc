@@ -74,13 +74,24 @@ nmap <silent> <leader>Z :e ~/.zshrc<CR>
 noremap <leader>zz :!source ~/.zshrc<CR>:filetype detect<CR>:exe ":echo 'zshrc reloaded'"<CR>
 noremap <leader>vv :source ~/.config/nvim/init.vim<CR>:filetype detect<CR>:exe ":echo 'nvimrc reloaded'"<CR>
 
+" Searching
+set path+=**
+
+" Persistent undo
+set undofile
+call mkdir($HOME."/.config/nvim/undo", "p")
+set undodir=$HOME/.config/nvim/undo
+
+set undolevels=1000
+set undoreload=10000
+
 " in case you forgot to sudo
 cnoremap w!! %!sudo tee > /dev/null %
 
 " plugin settings
 let g:ctrlp_match_window = 'order:ttb,max:20'
 let g:NERDSpaceDelims=1
-let g:neomake_javascript_enabled_makers = ['standard']
+let g:neomake_javascript_enabled_makers = ['eslint']
 autocmd! BufWritePost * Neomake
 
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
@@ -127,6 +138,11 @@ let g:deoplete#enable_at_startup = 1
 if !exists('g:deoplete#omni#input_patterns')
   let g:deoplete#omni#input_patterns = {}
 endif
+
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+
 " let g:deoplete#disable_auto_complete = 1
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 " deoplete tab-complete

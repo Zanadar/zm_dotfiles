@@ -15,6 +15,7 @@
   lod = log --oneline --decorate
   rim = rebase -i master
   pushf = push --force-with-lease
+  rau = remote add upstream
 [merge]
   ff = only
 [fetch]
