@@ -30,6 +30,9 @@ Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 Plug 'tpope/vim-commentary'
 Plug 'itchyny/lightline.vim'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'benmills/vimux'
+Plug 'jez/vim-better-sml'
+Plug 'mxw/vim-jsx'
 
 function! DoRemote(arg)
   UpdateRemotePlugins

@@ -51,7 +51,7 @@ nnoremap <leader>f :NERDTreeFind<CR>
 nnoremap <leader>T :CtrlPClearCache<CR>:CtrlP<CR>
 nnoremap <leader>] :TagbarToggle<CR>
 nmap <F3> :let @/ = ""<CR>
-inoremap jj <ESC>
+inoremap jj <ESC>:w<CR>
 if has('nvim')
     " Temporary fix for neovim/neovim#2048
     " Shoutout to @vilhalmer for the idea for this fix
@@ -92,6 +92,7 @@ cnoremap w!! %!sudo tee > /dev/null %
 let g:ctrlp_match_window = 'order:ttb,max:20'
 let g:NERDSpaceDelims=1
 let g:neomake_javascript_enabled_makers = ['eslint']
+let g:neomake_javascript_eslint_exe = system('PATH=$(npm bin):$PATH && which eslint | tr -d "\n"')
 autocmd! BufWritePost * Neomake
 
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
@@ -171,6 +172,12 @@ if exists('g:plugs["tern_for_vim"]')
 endif
 nnoremap <Space> za
 set foldlevelstart=20
+
+
+" Vimux
+" Prompt for a command to run
+map <Leader>vp :VimuxPromptCommand<CR>
+map <Leader>vl :VimuxRunLastCommand<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""
 " Language Settings
