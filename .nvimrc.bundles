@@ -26,13 +26,16 @@ Plug 'airblade/vim-gitgutter'
 Plug 'pangloss/vim-javascript'
 Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'tpope/vim-jdaddy'
-Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 Plug 'tpope/vim-commentary'
+Plug 'jaawerth/nrun.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'benmills/vimux'
 Plug 'jez/vim-better-sml'
 Plug 'mxw/vim-jsx'
+Plug 'rust-lang/rust.vim'
+Plug 'pearofducks/ansible-vim'
+Plug 'martinda/Jenkinsfile-vim-syntax'
 
 function! DoRemote(arg)
   UpdateRemotePlugins

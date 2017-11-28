@@ -21,3 +21,5 @@ alias stoppg='pg_ctl -D /usr/local/var/postgres'
 alias git=hub
 alias npmo="npm --cache-min 9999999 "
 alias vimdirt="nvim `git status --porcelain | sed -ne 's/^ M //p'`"
+alias python="python3"
+alias python2="python2"

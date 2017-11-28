@@ -39,6 +39,7 @@ set nospell
 set noshowmatch         " Don't match parentheses/brackets
 set nocursorcolumn      " Don't paint cursor column
 set scrolljump=8        " Scroll 8 lines at a time at bottom/top
+set autoread
 let html_no_rendering=1 " Don't render italic, bold, links in HTML
 
 " keyboard shortcuts
@@ -88,12 +89,6 @@ set undoreload=10000
 " in case you forgot to sudo
 cnoremap w!! %!sudo tee > /dev/null %
 
-" plugin settings
-let g:ctrlp_match_window = 'order:ttb,max:20'
-let g:NERDSpaceDelims=1
-let g:neomake_javascript_enabled_makers = ['eslint']
-let g:neomake_javascript_eslint_exe = system('PATH=$(npm bin):$PATH && which eslint | tr -d "\n"')
-autocmd! BufWritePost * Neomake
 
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
 if executable('ag')
@@ -125,7 +120,7 @@ let g:lightline = {
       \ }
 
  " Make it obvious where 110 characters is
-set textwidth=110
+set textwidth=200
 set colorcolumn=+1
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%110v.\+/ " Disambiguate ,a & ,t from the Align plugin, making them fast again.
@@ -154,6 +149,7 @@ inoremap <Leader><Tab> <Space><Space>
 autocmd FileType javascript nnoremap <silent> <buffer> gb :TernDef<CR>
 
 nnoremap <leader>% :MtaJumpToOtherTag<cr>
+set mouse+=a
 
 " omnifuncs
 augroup omnifuncs
@@ -190,3 +186,40 @@ au Filetype html setlocal sw=2 ts=2 sts=2
 au Filetype less setlocal sw=2 ts=2 sts=2
 au Filetype clojure setlocal sw=4 ts=4 sts=4
 let g:jsx_ext_required = 0
+
+let g:neomake_sml_smlnj_maker = {
+    \ 'exe': 'sml',
+    \ 'args': ['-Ccontrol.poly-eq-warn=false'],
+    \ 'errorformat':
+        \ '%E%f:%l%\%.%c %trror: %m,' .
+        \ '%E%f:%l%\%.%c-%\d%\+%\%.%\d%\+ %trror: %m,' .
+        \ '%W%f:%l%\%.%c %tarning: %m,' .
+        \ '%W%f:%l%\%.%c-%\d%\+%\%.%\d%\+ %tarning: %m,' .
+        \ '%C%\s%\+%m,' .
+        \ '%-G%.%#'
+\ }
+
+" plugin settings
+"""" vimg-go
+let g:go_highlight_structs = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_variable_declarations = 1
+let g:go_highlight_variable_assignments = 1
+let g:go_highlight_build_constraints = 1
+let g:go_fmt_command = "goimports"
+let g:go_auto_type_info = 1
+set updatetime=2000
+"""
+let g:ctrlp_match_window = 'order:ttb,max:20'
+let g:NERDSpaceDelims=1
+let g:neomake_javascript_eslint_exe = nrun#Which('eslint')
+let g:neomake_javascript_enabled_makers = ['eslint']
+let g:neomake_rust_enabled_makers = ['rustc', 'cargo']
+let g:neomake_sml_enabled_makers = ['smlnj']
+let g:neomake_ansible_enabled_makers = ['ansiblelint']
+let g:rustfmt_autosave = 1
+autocmd! BufWritePost * Neomake
