@@ -52,5 +52,7 @@ pip3 install --user neovim
 # Also dont forget to run `:PlugInstall and :UpdateRemotePlugins` the first time your open nvim
 
 ln -sf `pwd`/.bashrc ~/.bash_profile
+ln -sf `pwd`/.vimrc ~/.vimrc
+ln -sf `pwd`/.vimrc.bundles ~/.vimrc.bundles
 
 

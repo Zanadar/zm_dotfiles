@@ -2,7 +2,7 @@
 syntax enable
 
 " Call Vim Plug
-call plug#begin('~/config/nvim/plugged')
+call plug#begin('~/.vim/plugged')
 if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
 endif
@@ -40,6 +40,7 @@ set noshowmatch         " Don't match parentheses/brackets
 set nocursorcolumn      " Don't paint cursor column
 set scrolljump=8        " Scroll 8 lines at a time at bottom/top
 let html_no_rendering=1 " Don't render italic, bold, links in HTML
+set encoding=utf-8
 
 " keyboard shortcuts
 let mapleader = ','
@@ -62,7 +63,7 @@ nmap <silent> <leader>V :e $MYVIMRC<CR>
 nmap <silent> <leader>B :e ~/.vimrc.bundles<CR>
 nmap <silent> <leader>Z :e ~/.zshrc<CR>
 noremap <leader>zz :!source ~/.zshrc<CR>:filetype detect<CR>:exe ":echo 'zshrc reloaded'"<CR>
-noremap <leader>vv :source ~/.vim/init.vim<CR>:filetype detect<CR>:exe ":echo 'nvimrc reloaded'"<CR>
+noremap <leader>vv :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
 " in case you forgot to sudo
 cnoremap w!! %!sudo tee > /dev/null %
@@ -70,7 +71,6 @@ cnoremap w!! %!sudo tee > /dev/null %
 " plugin settings
 let g:ctrlp_match_window = 'order:ttb,max:20'
 let g:NERDSpaceDelims=1
-let g:neomake_javascript_enabled_makers = ['standard']
 autocmd! BufWritePost * Neomake
 let g:deoplete#enable_at_startup = 1
 
@@ -126,23 +126,15 @@ inoremap <silent><expr> <Tab> pumvisible() ? "\<C-n>" : deoplete#mappings#manual
 " ,<Tab> for regular tab
 inoremap <Leader><Tab> <Space><Space>
 " tern
-autocmd FileType javascript nnoremap <silent> <buffer> gb :TernDef<CR>
 
 " omnifuncs
 augroup omnifuncs
   autocmd!
   autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
   autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-  autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
   autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
   autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 augroup end
-" tern
-if exists('g:plugs["tern_for_vim"]')
-  let g:tern_show_argument_hints = 'on_hold'
-  let g:tern_show_signature_in_pum = 1
-  autocmd FileType javascript setlocal omnifunc=tern#Complete
-endif
 set path=$PWD/**
 
 """"""""""""""""""""""""""""""""""""""""""""
@@ -151,4 +143,3 @@ set path=$PWD/**
 
 au Filetype html setlocal sw=2 ts=2 sts=2
 au Filetype less setlocal sw=2 ts=2 sts=2
-au Filetype clojure setlocal sw=4 ts=4 sts=4

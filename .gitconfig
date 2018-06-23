@@ -23,9 +23,9 @@
   name = Zander Mackie
   email = zmackie@gmail.com
 [code]
-  editor = /usr/local/bin/nvim
+  editor = /usr/local/bin/vim
 [core]
-  editor = /usr/local/bin/nvim
-  excludesfile = /Users/zanadar/.global_ignore
+  editor = /usr/local/bin/vim
+  excludesfile = ~/.gitignore
 [hub]
   protocol = https
