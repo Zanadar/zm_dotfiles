@@ -26,14 +26,11 @@ alias reload="exec $(which bash) -l"
 
 function load-key() {
   KEY_NAME=$1
-
-  if [-z $KEY_NAME]; then
-    KEY_NAME='my-ssh-key'
-  fi
+  KEY_NAME=${KEY_NAME:-my-ssh-key}
 
   if [[ $? -eq 0 ]]; then
     /usr/bin/ssh-add -D
-    op get item ${KEY_NAME} | /jq -r .details.notesPlain | usr/bin/ssh-add -t 2H -;
+    op get item ${KEY_NAME} | jq -r .details.notesPlain | /usr/bin/ssh-add -t 2H -;
   fi
 }
 
