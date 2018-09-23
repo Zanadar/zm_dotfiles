@@ -134,7 +134,13 @@ augroup omnifuncs
   autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
   autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
   autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+  " Neomake configuration.
 augroup end
+augroup my_neomake_cmds
+    autocmd!
+    " Have neomake run cargo when Rust files are saved.
+    autocmd BufWritePost *.rs Neomake! cargo
+augroup END
 set path=$PWD/**
 
 """"""""""""""""""""""""""""""""""""""""""""
@@ -143,3 +149,9 @@ set path=$PWD/**
 
 au Filetype html setlocal sw=2 ts=2 sts=2
 au Filetype less setlocal sw=2 ts=2 sts=2
+
+let g:rustfmt_autosave = 1
+au FileType rust nmap gd <Plug>(rust-def)
+au FileType rust nmap gs <Plug>(rust-def-split)
+au FileType rust nmap gx <Plug>(rust-def-vertical)
+au FileType rust nmap <leader>gd <Plug>(rust-doc)

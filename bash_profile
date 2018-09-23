@@ -38,3 +38,5 @@ function load-key() {
 }
 
 alias vkl='load-key'
+
+export PATH="$HOME/.cargo/bin:$PATH"

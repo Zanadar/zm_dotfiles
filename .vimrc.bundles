@@ -31,5 +31,8 @@ else
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
+Plug 'sebastianmarkow/deoplete-rust'
+Plug 'rust-lang/rust.vim'
+Plug 'racer-rust/vim-racer'
 let g:deoplete#enable_at_startup = 1
 
