@@ -8,6 +8,8 @@ if filereadable(expand("~/.vimrc.bundles"))
 endif
 call plug#end()
 
+let g:deoplete#enable_at_startup = 1
+
 autocmd BufReadPre,BufNewFile * let b:did_ftplugin = 1
 filetype plugin on
 set autoindent
@@ -155,3 +157,8 @@ au FileType rust nmap gd <Plug>(rust-def)
 au FileType rust nmap gs <Plug>(rust-def-split)
 au FileType rust nmap gx <Plug>(rust-def-vertical)
 au FileType rust nmap <leader>gd <Plug>(rust-doc)
+
+" Racer
+set hidden
+let g:racer_cmd = "/Users/zmackie/.cargo/bin/racer"
+let g:racer_experimental_completer = 1

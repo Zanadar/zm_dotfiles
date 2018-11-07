@@ -4,7 +4,6 @@ eval "$(direnv hook bash)"
 
 export VISUAL=vim
 export EDITOR="$VISUAL"
-
 export PATH="$HOME/.rbenv/bin:$PATH"
 [[ `which rbenv` ]] && eval "$(rbenv init -)"
 
@@ -22,7 +21,6 @@ else
     export PS1="\[\033[01;32m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ "
 fi
 
-alias reload="exec $(which bash) -l"
 
 function load-key() {
   KEY_NAME=$1
@@ -35,5 +33,7 @@ function load-key() {
 }
 
 alias vkl='load-key'
+alias ll='ls -la'
+alias reload="exec $(which bash) -l"
 
 export PATH="$HOME/.cargo/bin:$PATH"
