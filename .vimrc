@@ -1,5 +1,6 @@
 " enable syntax highlighting
 syntax enable
+set shell=/bin/bash
 
 " Call Vim Plug
 call plug#begin('~/.vim/plugged')

@@ -1,10 +1,9 @@
 [push]
-  default = current
+  default = nothing
+
 [color]
   ui = auto
-[credential]
-  helper = osxkeychain
-  useHttpPath = true
+
 [alias]
   aa = add --all
   ap = add --patch
@@ -15,17 +14,20 @@
   lod = log --oneline --decorate
   rim = rebase -i master
   rau = remote add upstream
+
 [fetch]
   prune = true
+
 [rebase]
   autosquash = true
+
 [user]
   name = Zander Mackie
   email = zmackie@gmail.com
+
 [code]
   editor = /usr/local/bin/vim
+
 [core]
   editor = /usr/local/bin/vim
   excludesfile = ~/.gitignore
-[hub]
-  protocol = https
