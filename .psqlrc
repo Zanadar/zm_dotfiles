@@ -1,0 +1,14 @@
+\x auto
+
+\pset linestyle unicode
+\pset border 2
+\pset null 'NULL'
+-- By default, NULL displays as an empty space. Is it actually an empty
+-- string, or is it null? This makes that distinction visible. (Thanks, Thoughtbot!)
+
+\set PROMPT1 '%[%033[33;1m%]%x%[%033[0m%]%[%033[1m%]%/%[%033[0m%]%R%#'
+\set COMP_KEYWORD_CASE upper
+
+\timing
+
+set work_mem = '8MB';
