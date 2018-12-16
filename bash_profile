@@ -1,6 +1,13 @@
 eval "$(direnv hook bash)"
 
-[ -f ~/.bashrc_local ] && . ~/.bashrc_local
+# Load .bashrc and other files...
+for file in ~/.{bashrc,bash_prompt,bashrc_local,aliases,functions,path,dockerfunc,extra,exports}; do
+	if [[ -r "$file" ]] && [[ -f "$file" ]]; then
+		# shellcheck source=/dev/null
+		source "$file"
+	fi
+done
+unset file
 
 export VISUAL=vim
 export EDITOR="$VISUAL"

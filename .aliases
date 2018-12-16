@@ -4,22 +4,11 @@ alias ln="ln -v"
 alias mkdir="mkdir -p"
 alias e="$EDITOR"
 alias v="$VISUAL"
-
-# Bundler
-alias b="bundle"
-
-# Rails
-alias migrate="rake db:migrate db:rollback && rake db:migrate"
-alias nuke="rake db:drop && rake db:create && development restore production"
+alias vim="nvim"
 
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
 
-alias startpg='pg_ctl start -D /usr/local/var/postgres'
-alias stoppg='pg_ctl -D /usr/local/var/postgres'
-
-alias git=hub
-alias npmo="npm --cache-min 9999999 "
 alias vimdirt="nvim `git status --porcelain | sed -ne 's/^ M //p'`"
 alias python="python3"
 alias python2="python2"
