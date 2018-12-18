@@ -9,24 +9,19 @@ for file in ~/.{bashrc,bash_prompt,bashrc_local,aliases,functions,path,dockerfun
 done
 unset file
 
-export VISUAL=vim
+export VISUAL=nvim
 export EDITOR="$VISUAL"
-export PATH="$HOME/.rbenv/bin:$PATH"
-[[ `which rbenv` ]] && eval "$(rbenv init -)"
-
-# Load the auto-completion script if rbenv was loaded.
-[[ -e ~/.rbenv/completions/rbenv.bash ]] && source ~/.rbenv/completions/rbenv.bash; echo -ne "\033];${PWD##*/}\007"
 
 # Setup git ps1
 # alias __git_ps1="git branch 2>/dev/null | grep '*' | sed 's/* \(.*\)/(\1)/'"
-[[ -f ~/.git-prompt.sh ]] && source ~/.git-prompt.sh
+#[[ -f ~/.git-prompt.sh ]] && source ~/.git-prompt.sh
 
 # Colorize host name
-if type __git_ps1 > /dev/null 2>&1; then
-    export PS1="\[\033[01;32m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[01;32m\]\$(__git_ps1 ' %s')\[\033[00m\] $\[\e[0m\] "
-else
-    export PS1="\[\033[01;32m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ "
-fi
+#if type __git_ps1 > /dev/null 2>&1; then
+#    export PS1="\[\033[01;32m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[01;32m\]\$(__git_ps1 ' %s')\[\033[00m\] $\[\e[0m\] "
+#else
+#    export PS1="\[\033[01;32m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ "
+#fi
 
 
 function load-key() {
@@ -43,4 +38,5 @@ alias vkl='load-key'
 alias ll='ls -la'
 alias reload="exec $(which bash) -l"
 
+export PATH=$PATH:/usr/local/go/bin
 export PATH="$HOME/.cargo/bin:$PATH"
