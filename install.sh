@@ -29,5 +29,6 @@ ln -sf `pwd`/.vimrc.bundles ~/.vimrc.bundles
 ln -sf `pwd`/.aliases ~/.aliases
 ln -sf `pwd`/.gitconfig ~/.gitconfig
 ln -sf `pwd`/.gitignore ~/.gitignore
+ln -sf "$(pwd)"/config ~/.config/i3/config
 
 echo "done"
