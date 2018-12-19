@@ -14,14 +14,14 @@ export EDITOR="$VISUAL"
 
 # Setup git ps1
 # alias __git_ps1="git branch 2>/dev/null | grep '*' | sed 's/* \(.*\)/(\1)/'"
-#[[ -f ~/.git-prompt.sh ]] && source ~/.git-prompt.sh
+[[ -f ~/.git_prompt.sh ]] && source ~/.git_prompt.sh
 
 # Colorize host name
-#if type __git_ps1 > /dev/null 2>&1; then
-#    export PS1="\[\033[01;32m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[01;32m\]\$(__git_ps1 ' %s')\[\033[00m\] $\[\e[0m\] "
-#else
-#    export PS1="\[\033[01;32m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ "
-#fi
+if type __git_ps1 > /dev/null 2>&1; then
+    export PS1="\[\033[01;32m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[01;32m\]\$(__git_ps1 ' %s')\[\033[00m\] $\[\e[0m\] "
+else
+    export PS1="\[\033[01;32m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ "
+fi
 
 
 function load-key() {
